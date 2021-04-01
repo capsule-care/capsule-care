@@ -1,0 +1,33 @@
+:root {
+  /*colors*/
+  --main-color: ;
+  --secondary-color: ;
+  --thirdly-color: ;
+
+  /*fonts name*/
+  --body-font: ;
+  --logo-font: ;
+  --title-font: ;
+
+  /*fonts size*/
+
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.3;
+  font-family: var(--body-font);
+}
