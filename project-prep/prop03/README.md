@@ -1,5 +1,6 @@
 # capsule care
 
+## Project: Prep #03
 
 ## Team Member
 
@@ -15,10 +16,11 @@ Team Member:
 
 ***
 
-## Project: Prep
+Name of Project: Capsule Care
 
-- [Prop #01](./project-prep/prop01/README.md)
-- [Prop #02](./project-prep/prop02/README.md)
-- [Prop #03](./project-prep/prop03/README.md)
-- [Prop #04](./project-prep/prop04/README.md)
+Link on GitHub: https://github.com/capsule-care/capsule-care.github.io
+
+Live URL: https://capsule-care.github.io/
+
+[⇐ Home Page](../../README.md)
 
