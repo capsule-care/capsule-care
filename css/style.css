@@ -196,7 +196,7 @@ img {
   height: 8rem;
 }
 
-.sectionServices {}
+
 
 .titleArea {
   max-width: 760px;
@@ -657,8 +657,9 @@ form {
   width: 380px;
   margin: 4em auto;
   padding: 3em 2em 2em 2em;
-  background: #d8ebe4;
+  background: white;
   border: 1px solid #ebebeb;
+  box-shadow: 0 20px 40px -14px rgb(0 0 0 / 60%);
 
   border-radius: .7rem;
 
@@ -771,7 +772,7 @@ input:focus~.highlight {
 
 
 .btncolor {
-  background: #fed049;
+  background: #357bd8;
   text-shadow: 1px 1px 0 #fed049;
 }
 
