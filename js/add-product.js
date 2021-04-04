@@ -10,9 +10,9 @@ function addNewProduct(event) {
   let ProductImg = event.target.ProductImg.value;
   let ProductType = event.target.ProductType.value;
   let ProductPrice = Number(event.target.ProductPrice.value);
-  
+
 
   let addProduct = new Product(name, ProductDesc, ProductImg,ProductType,ProductPrice);
   addProductForm.reset();
-  console.log(addProduct)
+  console.log(addProduct);
 }
