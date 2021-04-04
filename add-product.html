@@ -66,6 +66,25 @@
       <button type="btn" class="btn btncolor">Login
       </button>
     </form>
+    <form id="addProduct">
+      <fieldset>
+        <legend>Add New Product</legend>
+        <label >Product Name</label>
+        <input id="name" name="name" type="text" placeholder="Name Of Product">
+        <label >Product Descreption</label>
+        <input id="ProductDesc" name="ProductDesc" type="text" placeholder="A litle Descreption about the Product">
+        <label >Product Image</label>
+        <input id="ProductImg" name="ProductImg" type="text" placeholder="URL img for Product">
+        <label >Product Price</label>
+        <input id="ProductPrice" name="ProductPrice" type="number" step="any" placeholder="Price for Product">
+        <select id="ProductType" name="ProductType">
+          <option value="Drugs">Drugs</option>
+          <option value="Cosmetics">Cosmetics</option>
+          <option value="Nutrition">Nutrition</option>
+        </select>
+        <input type="submit" value="Submit">
+      </fieldset>
+    </form>
 
 
 
@@ -99,6 +118,7 @@
 
 
   <script src="./js/app.js"></script>
+  <script src="./js/add-product.js"></script>
 </body>
 
 </html>

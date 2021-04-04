@@ -1,3 +1,4 @@
+
 const td1El = document.createElement('td');
 cartTable.appendChild(td1El);
 td1El.textContent = "this.name";
