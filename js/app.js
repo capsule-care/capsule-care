@@ -49,3 +49,11 @@ let info = ['desc', 'pow pow'];
 let path = ['./img/cosmetics-img/sunblock.jpg', 'https://media.voltron.alhurra.com/Drupal/01live-106/styles/sourced/s3/2019-12/001D439A-FD4A-4B12-AFFD-07380DA8C295.jpg?itok=WHQITdkq'];
 let type = ['cosmetics', 'drugs'];
 
+function Cart(name, desc, path, type) {
+  this.name = name;
+  this.path = path;
+  this.price = price;
+  this.type = type;
+  Cart.all.push(this);
+}
+Cart.all = [];
