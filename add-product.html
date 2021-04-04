@@ -23,15 +23,22 @@
       </div>
       <ul class="items">
         <li class="item"><a href="/">Home</a></li>
-        <li class="item"><a href="./#services">Services</a></li>
-        <li class="item"><a href="./#bestSelling">Best Selling</a></li>
-        <li class="item"><a href="./#about-us">About Us</a></li>
-        <li class="item"><a href="./#contact-us">Contact Us</a></li>
+        <li class="item dropdown">
+          <a href="#services">Services</a>
+          <ul class="dropdownContent">
+            <li><a class="dropdownlink" href="./drugs.html">Drugs</a></li>
+            <li><a class="dropdownlink" href="./cosmetics.html">Cosmetics</a></li>
+            <li><a class="dropdownlink" href="./nutrition.html">Nutrition</a></li>
+          </ul>
+        </li>
+        <li class="item"><a href="#bestSelling">Best Selling</a></li>
         <li class="item"><a href="./add-product.html">Add Product</a></li>
-        <li class="itemcart">
+        <li class="item"><a href="#about-us">About Us</a></li>
+        <li class="item"><a href="#contact-us">Contact Us</a></li>
+        <li class="item">
           <a href="./cart.html">
             <span class="iconCart cart-e"></span>
-            Cart
+            &nbsp;Cart
           </a>
         </li>
       </ul>
@@ -46,52 +53,54 @@
       </div>
     </section>
   </header>
-
   <main>
 
+    <div class="whiteSpace"></div>
 
+    <section class="loginSection">
+      <form action="" method="POST" class="boxForm">
+        <fieldset>
+          <legend>Log in</legend>
+          <label>User name:</label>
+          <input type="email" id="email" name="email" placeholder="Email">
+          <label>Password:</label>
+          <input type="password" id="password" name="password" placeholder="Password">
+          <input type="submit" value="Log in" class="btn btn-submit">
+        </fieldset>
+      </form>
+    </section>
 
+    <div class="whiteSpace"></div>
 
-    <form>
-      <div class="position">
-        <label>User name:</label>
-        <input type="text"><span class="line"></span>
+    <section class="addProductSection">
+      <form action="" method="POST" id="addProduct" class="boxForm">
+        <fieldset>
+          <legend>Add New Product</legend>
+          <label>Product Name</label>
+          <input id="name" name="name" type="text" placeholder="Name Of Product" required>
+          <label>Product Descreption</label>
+          <input id="ProductDesc" name="ProductDesc" type="text" placeholder="A litle Descreption about the Product"
+            required>
+          <label>Product Image</label>
+          <input id="ProductImg" name="ProductImg" type="text" placeholder="URL img for Product" required>
+          <label>Product Price</label>
+          <input id="ProductPrice" name="ProductPrice" type="number" step="any" placeholder="Price for Product"
+            required>
+          <label>Product Type</label>
+          <select id="ProductType" name="ProductType" required>
+            <option value disabled selected>Product Type</option>
+            <option value="Drugs">Drugs</option>
+            <option value="Cosmetics">Cosmetics</option>
+            <option value="Nutrition">Nutrition</option>
+          </select>
+          <input type="submit" value="Submit" class="btn btn-submit">
+        </fieldset>
+      </form>
+    </section>
 
-      </div>
-      <div class="position">
-        <label>Password:</label>
-        <input type="email"><span class="line"></span>
-
-      </div>
-      <button type="btn" class="btn btncolor">Login
-      </button>
-    </form>
-    <form id="addProduct">
-      <fieldset>
-        <legend>Add New Product</legend>
-        <label >Product Name</label>
-        <input id="name" name="name" type="text" placeholder="Name Of Product">
-        <label >Product Descreption</label>
-        <input id="ProductDesc" name="ProductDesc" type="text" placeholder="A litle Descreption about the Product">
-        <label >Product Image</label>
-        <input id="ProductImg" name="ProductImg" type="text" placeholder="URL img for Product">
-        <label >Product Price</label>
-        <input id="ProductPrice" name="ProductPrice" type="number" step="any" placeholder="Price for Product">
-        <select id="ProductType" name="ProductType">
-          <option value="Drugs">Drugs</option>
-          <option value="Cosmetics">Cosmetics</option>
-          <option value="Nutrition">Nutrition</option>
-        </select>
-        <input type="submit" value="Submit">
-      </fieldset>
-    </form>
-
-
-
-
+    <div class="whiteSpace"></div>
 
   </main>
-
   <footer>
     <section class="flexContainer">
       <section class="contentContainer">
