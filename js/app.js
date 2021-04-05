@@ -23,6 +23,11 @@ Product.prototype.render = function () {
   cardbox.classList.add('cardbox');
   cardItem.appendChild(cardbox);
 
+  let cardprice = document.createElement('p');
+  cardprice.classList.add('card-price');
+  cardprice.textContent = `Price : ${this.price} JD`;
+  cardItem.appendChild(cardprice);
+
   let cardImgdiv = document.createElement('div');
   cardImgdiv.classList.add('cardImg');
   cardbox.appendChild(cardImgdiv);
@@ -48,10 +53,11 @@ Product.prototype.render = function () {
   cardInfo.textContent = `${this.desc}`;
   cardContent.appendChild(cardInfo);
 
-  let cardprice = document.createElement('p');
-  cardprice.classList.add('cardPrice');
-  cardprice.textContent = `Price : ${this.price} JD`;
-  cardContent.appendChild(cardprice);
+//  let addToCart =document.getElementsByClassName('btn')
+// //  cardInfo.classList.add('cardButton');
+//  cardcontent.appendChild('addToCart');
+//  addToCart.textContent('ADD TO CART');
+
 };
 
 let name = ['Liftactiv  Collagen', 'Milk Shake Conditioner', 'Anthelios Sunscreen', 'Avene sunblock', 'La Roche-Posay Effaclar Gel', 'Garnier Light Complete', 'Keratin Gloss Serum', 'Normaderm Gel Cleanser', 'Micellar Cleansing Water', 'Vegan Protien', 'Serious Mass', 'Gold Standard Whey Elite', 'Gold Standard pre-workout', 'Micronised Creatine Pwoder', 'C4 Original', 'C4 Double', 'Protien Bar', 'Amino Energy', 'Gold Standard BCAA', 'Panadol', 'Lansoprazole'];
