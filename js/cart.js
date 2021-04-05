@@ -22,7 +22,7 @@ function settingItems() {
 }
 
 function gettingItems() {
-  let asString = localStorage.getItem('Cart2');
+  let asString = localStorage.getItem('Cart');
   let asObj = JSON.parse(asString);
 
   if (asObj !== null) {
