@@ -510,7 +510,7 @@ img {
 }
 
 .card {
-  background: #FAF7FF;
+  background: #f3dfcd;
   color: var(--black-color);
   box-shadow: 0 32px 44px -24px rgb(0 0 0 / 23%), 0 20px 25px 0px rgb(0 0 0 / 12%), 0 15px 10px -10px rgb(0 0 0 / 20%);
   border-radius: 6px;
@@ -642,7 +642,10 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-filter: contrast(70%);
-  filter: contrast(70%);
+
+  /* filter: contrast(70%); */
+  filter: contrast(95%);
+
   overflow: hidden;
   position: relative;
   transition: -webkit-filter .5s cubic-bezier(.43, .41, .22, .91);
@@ -661,14 +664,22 @@ footer {
   flex: 1 1 auto;
   flex-direction: column;
   padding: 1rem;
+
+
+  font-family: var(--form-font) ;
 }
 
 .cardTitle {
-  color: #696969;
-  font-size: 1.25rem;
+  /* color: #696969; */
+  color: #91c788;
+
+  font-size: 1.3rem;
   font-weight: 300;
   letter-spacing: 0.125rem;
-  text-transform: uppercase;
+
+  /* text-transform: uppercase; */
+
+  font-family: var(--form-font);
 }
 
 .cardInfo {

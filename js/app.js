@@ -1,3 +1,5 @@
+/* eslint-disable no-redeclare */
+/* eslint-disable no-unused-vars */
 'use strict';
 
 function Product(name, desc, path, type, price) {
@@ -52,11 +54,18 @@ Product.prototype.render = function () {
   cardContent.appendChild(cardprice);
 };
 
-let name = ['sunblock', 'Panadol', 'Lansoprazole'];
-let info = ['information', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae inventore maiores quos blanditiis in molestiae? Temporibus vitae illo atque dolor consectetur saepe perspiciatis at delectus? Rem fugiat quam eius illum.', 'information'];
-let path = ['./img/cosmetics-img/sunblock.jpg', 'https://i-cf3.gskstatic.com/content/dam/cf-consumer-healthcare/panadol/en_ae/Products/Panadol%20Extra%20455x455.jpg?auto=format', 'https://www.doctor-4-u.co.uk/media/catalog/product/cache/4846c044a117da5cf73523315de05422/l/a/lansoprazole-2.1.jpg'];
-let type = ['cosmetics', 'drugs', 'drugs'];
-let price = [1.5, 4, 112.25];
+let name = ['Liftactiv  Collagen', 'Milk Shake Conditioner', 'Anthelios Sunscreen', 'Avene sunblock', 'La Roche-Posay Effaclar Gel', 'Garnier Light Complete', 'Keratin Gloss Serum', 'Normaderm Gel Cleanser', 'Micellar Cleansing Water', 'Panadol', 'Lansoprazole'];
+
+
+let info = ['Day Cream- boosts the skin collagen production and fights ageing signs by lifting wrinkles and fine lines, redefining contours and bringing a more even skin tone.', 'A Unisex  hair care Conditioner, Imported from UK. It gives structure, Hold and maintains hairstyles without altering the natural movement of the hair It provides hair volume and shine without unwanted residue.', 'Anthelios sunscreen -suitable for sensitive skin- contains the exclusive Cell-Ox Shield® technology: broad spectrum UVA/UVB protection plus antioxidants to protect skin from free radicals.', 'Very high sun protection for dry sensitive skin on the face. Rich and moisturising texture to nourish the skin. Extremely broad-spectrum UVB-UVA protection.', 'La Roche-Posay Effaclar Gel is a delicately cleansing gel foam for oily skin and sensitive skin with content of La Roche-Posay Thermal Spring Water.', 'A brightening face cream enriched with Yuzu Lemon & Vitamin C serum, Gives spot-less, brighter skin in 1 week, contains UV filters to protect skin from sun.', 'A Serum  packed with natural keratin that fills the gaps in your hair structure leaving it mirror smooth in just one touch.  It’s also super light weight and non-greasy, so you can apply it with ease at home or on the go.', 'Deep cleansing gel for oily & acne-prone skin. Purifies skin and unclogs pores without dryness or irritation.', 'All-in-one Cleanser & Makeup Remover, clean, remove makeup and refreshes. No Need to rinse, or harsh rubbing, suitable for sensitive skin, for face and eyes.', 'info', 'info'];
+
+
+
+let path = ['./img/cosmetics-img/1.jpg', './img/cosmetics-img/2.jpg', './img/cosmetics-img/3.jpg', './img/cosmetics-img/4.jpg', './img/cosmetics-img/5.jpg', './img/cosmetics-img/6.jpg', './img/cosmetics-img/7.jpg', './img/cosmetics-img/8.jpg', './img/cosmetics-img/9.jpg', './img/drugs/panadol.jpg', './img/drugs/lansoprazole.jpg'];
+
+let type = ['cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'drugs', 'drugs'];
+
+let price = [30, 15, 15, 20, 20, 15, 17, 20, 8, 4, 112.25];
 
 function Cart(name, price, path, type) {
   this.name = name;
