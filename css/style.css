@@ -666,7 +666,7 @@ footer {
   padding: 1rem;
 
 
-  font-family: var(--form-font) ;
+  font-family: var(--form-font);
 }
 
 .cardTitle {
@@ -868,4 +868,32 @@ fieldset>select>option {
   /* overflow: hidden; */
   /* z-index: 1; */
   /* transition: color 150ms ease-in-out; */
+}
+
+/******* cart *******/
+.cartSection {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+table,
+td,
+th {
+  padding: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table th {
+  background-color: var(--main-color);
+  color: white;
+}
+
+table tr:hover {
+  background-color: var(--main-color);
+  color: white;
 }

@@ -59,19 +59,62 @@ let name = ['Liftactiv  Collagen', 'Milk Shake Conditioner', 'Anthelios Sunscree
 
 let info = ['Day Cream- boosts the skin collagen production and fights ageing signs by lifting wrinkles and fine lines, redefining contours and bringing a more even skin tone.', 'A Unisex  hair care Conditioner, Imported from UK. It gives structure, Hold and maintains hairstyles without altering the natural movement of the hair It provides hair volume and shine without unwanted residue.', 'Anthelios sunscreen -suitable for sensitive skin- contains the exclusive Cell-Ox Shield® technology: broad spectrum UVA/UVB protection plus antioxidants to protect skin from free radicals.', 'Very high sun protection for dry sensitive skin on the face. Rich and moisturising texture to nourish the skin. Extremely broad-spectrum UVB-UVA protection.', 'La Roche-Posay Effaclar Gel is a delicately cleansing gel foam for oily skin and sensitive skin with content of La Roche-Posay Thermal Spring Water.', 'A brightening face cream enriched with Yuzu Lemon & Vitamin C serum, Gives spot-less, brighter skin in 1 week, contains UV filters to protect skin from sun.', 'A Serum  packed with natural keratin that fills the gaps in your hair structure leaving it mirror smooth in just one touch.  It’s also super light weight and non-greasy, so you can apply it with ease at home or on the go.', 'Deep cleansing gel for oily & acne-prone skin. Purifies skin and unclogs pores without dryness or irritation.', 'All-in-one Cleanser & Makeup Remover, clean, remove makeup and refreshes. No Need to rinse, or harsh rubbing, suitable for sensitive skin, for face and eyes.', 'info', 'info'];
 
-
-
 let path = ['./img/cosmetics-img/1.jpg', './img/cosmetics-img/2.jpg', './img/cosmetics-img/3.jpg', './img/cosmetics-img/4.jpg', './img/cosmetics-img/5.jpg', './img/cosmetics-img/6.jpg', './img/cosmetics-img/7.jpg', './img/cosmetics-img/8.jpg', './img/cosmetics-img/9.jpg', './img/drugs/panadol.jpg', './img/drugs/lansoprazole.jpg'];
 
 let type = ['cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'drugs', 'drugs'];
 
 let price = [30, 15, 15, 20, 20, 15, 17, 20, 8, 4, 112.25];
 
-function Cart(name, price, path, type) {
+
+
+function Cart(name, path, price, type, quantity) {
   this.name = name;
   this.path = path;
   this.price = price;
   this.type = type;
+  this.quantity = quantity;
+  this.total = this.price * this.quantity;
   Cart.all.push(this);
 }
 Cart.all = [];
+
+
+Cart.prototype.render = function () {
+  const cartTable = document.getElementById('cartTable');
+
+  const newLine = document.createElement('tr');
+  cartTable.appendChild(newLine);
+
+  let deletedTd = document.createElement('td');
+  deletedTd.textContent = 'remove';
+  newLine.appendChild(deletedTd);
+
+  const productName = document.createElement('td');
+  productName.textContent = this.name;
+  newLine.appendChild(productName);
+
+  const productImg = document.createElement('td');
+  newLine.appendChild(productImg);
+  const productImgTag = document.createElement('img');
+  productImgTag.src = this.path;
+  productImgTag.width = 50;
+  productImgTag.height = 50;
+  productImg.appendChild(productImgTag);
+
+  const productType = document.createElement('td');
+  productType.textContent = this.type;
+  newLine.appendChild(productType);
+
+  const individualPrice = document.createElement('td');
+  individualPrice.textContent = this.price;
+  newLine.appendChild(individualPrice);
+
+  const quantity = document.createElement('td');
+  quantity.textContent = this.quantity;
+  newLine.appendChild(quantity);
+
+  const totalPrice = document.createElement('td');
+  totalPrice.textContent = this.total;
+  newLine.appendChild(totalPrice);
+
+};
