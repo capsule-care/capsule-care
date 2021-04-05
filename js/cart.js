@@ -39,16 +39,16 @@ for (let i = 0; i < cartName.length; i++) {
 
 
 function settingItems() {
-  let items = JSON.stringify(Cart.all);
+  let items = JSON.stringify(Cart2.all);
   localStorage.setItem('Cart', items);
 }
 
 function gettingItems() {
-  let asString = localStorage.getItem('Cart');
+  let asString = localStorage.getItem('Cart2');
   let asObj = JSON.parse(asString);
 
   if (asObj !== null) {
-    Cart.all = asObj;
+    Cart2.all = asObj;
     //render();
   }
 
