@@ -1,7 +1,7 @@
 /* eslint-disable no-redeclare */
 /* eslint-disable no-unused-vars */
 'use strict';
-
+let addToCart12 = [];
 function Product(name, desc, path, type, price) {
   this.name = name;
   this.path = path;
@@ -53,10 +53,31 @@ Product.prototype.render = function () {
   cardInfo.textContent = `${this.desc}`;
   cardContent.appendChild(cardInfo);
 
-//  let addToCart =document.getElementsByClassName('btn')
-// //  cardInfo.classList.add('cardButton');
-//  cardcontent.appendChild('addToCart');
-//  addToCart.textContent('ADD TO CART');
+  let addToCart =document.createElement('button');
+  cardbox.appendChild(addToCart);
+  addToCart.classList.add('cardButton');
+  addToCart.setAttribute('class',`${this.name}`);
+  //addToCart.id=`cardButton${Product.all.length}`;
+  addToCart.textContent='ADD TO CART';
+
+
+  //const addToCart1 = document.getElementsByClassName(`${this.name}`);
+
+  addToCart.addEventListener('click' , addcart);
+
+  function addcart(event) {
+    event.preventDefault();
+    // addToCart12.push()
+    // let name = event.this.name;
+    // let ProductImg = event.this.path;
+    // let ProductType = event.this.type;
+    // let ProductPrice = Number(event.this.price);
+
+
+    // let addtocart = new Cart(name, ProductImg, ProductPrice,ProductType);
+    console.table(event);
+  }
+
 
 };
 
@@ -73,12 +94,12 @@ let price = [30, 15, 15, 20, 20, 15, 17, 20, 8, 28.4, 19.9, 15.6, 15.6, 12.1, 21
 
 
 
-function Cart(name, path, price, type, quantity) {
+function Cart(name, path, price, type) {
   this.name = name;
   this.path = path;
   this.price = price;
   this.type = type;
-  this.quantity = quantity;
+  //this.quantity = quantity;
   this.total = this.price * this.quantity;
   Cart.all.push(this);
 }
