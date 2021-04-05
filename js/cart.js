@@ -1,34 +1,73 @@
 'use strict';
 
-let productName = ['moh', 'ab'];
-let productPath = ['./img/cosmetics-img/1.jpg', './img/cosmetics-img/2.jpg'];
-let productPrices = [3, 4];
-let productType = ['drugs', 'cosmetics'];
-let quantitys = [4, 5];
+loadCart();
 
-for (let i = 0; i < productName.length; i++) {
-  let newCart = new Cart(productName[i], productPath[i], productPrices[i], productType[i], quantitys[i]);
-  newCart.render();
-  settingItems();
+function render(i) {
+  const cartTable = document.getElementById('cartTable');
+
+  const newLine = document.createElement('tr');
+  cartTable.appendChild(newLine);
+
+  let deletedTd = document.createElement('td');
+  deletedTd.textContent = 'remove';
+  deletedTd.id = i;
+  newLine.appendChild(deletedTd);
+
+  const deleteMM = document.getElementById(`${i}`);
+  deleteMM.addEventListener('click', removeProductFromCart);
+
+  const productName = document.createElement('td');
+  productName.textContent = cart.products[i].name;
+  newLine.appendChild(productName);
+
+  const productImg = document.createElement('td');
+  newLine.appendChild(productImg);
+  const productImgTag = document.createElement('img');
+  productImgTag.src = cart.products[i].path;
+  productImgTag.width = 50;
+  productImgTag.height = 50;
+  productImg.appendChild(productImgTag);
+
+  const productType = document.createElement('td');
+  productType.textContent = cart.products[i].type;
+  newLine.appendChild(productType);
+
+  const individualPrice = document.createElement('td');
+  individualPrice.textContent = cart.products[i].price;
+  newLine.appendChild(individualPrice);
+
+  const quantity = document.createElement('td');
+  quantity.textContent = cart.products[i].quantity;
+  newLine.appendChild(quantity);
+
+  const totalPrice = document.createElement('td');
+  totalPrice.textContent = cart.products[i].price * 1;
+  newLine.appendChild(totalPrice);
 }
 
-
-//______________________________storage
-
-
-function settingItems() {
-  let items = JSON.stringify(Cart.all);
-  localStorage.setItem('Cart', items);
+for (let i = 0; i < cart.products.length; i++) {
+  render(i);
 }
 
-function gettingItems() {
-  let asString = localStorage.getItem('Cart');
-  let asObj = JSON.parse(asString);
+updateCounter();
 
-  if (asObj !== null) {
-    Cart.all = asObj;
-    //render();
-  }
-
+function removeProductFromCart(event) {
+  cart.removeProduct(event.target.id);
+  cart.saveToLocalStorage();
+  loadCart();
+  updateCounter();
+  console.log(event.target.id);
+  // removeProduct(event.target.id);
+  render(event.target.id);
 }
-gettingItems();
+
+function removeProduct(i) {
+  let table = document.getElementById('cart');
+  let tableRows = table.getElementsByTagName('tr');
+
+  table.removeChild(tableRows[i]);
+}
+
+console.log(cart.products.length);
+
+
