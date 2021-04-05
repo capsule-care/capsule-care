@@ -1,7 +1,7 @@
 /* eslint-disable no-redeclare */
 /* eslint-disable no-unused-vars */
 'use strict';
-let addToCart12 = [];
+let addToCarts = [];
 function Product(name, desc, path, type, price) {
   this.name = name;
   this.path = path;
@@ -12,7 +12,7 @@ function Product(name, desc, path, type, price) {
 }
 Product.all = [];
 
-Product.prototype.render = function () {
+Product.prototype.render = function (i) {
   let cards = document.getElementById('cards');
 
   let cardItem = document.createElement('div');
@@ -56,27 +56,24 @@ Product.prototype.render = function () {
   let addToCart =document.createElement('button');
   cardbox.appendChild(addToCart);
   addToCart.classList.add('cardButton');
-  addToCart.setAttribute('class',`${this.name}`);
-  //addToCart.id=`cardButton${Product.all.length}`;
+  addToCart.setAttribute('id',`${i}`);
   addToCart.textContent='ADD TO CART';
 
-
-  //const addToCart1 = document.getElementsByClassName(`${this.name}`);
-
-  addToCart.addEventListener('click' , addcart);
-
-  function addcart(event) {
+    addToCart.addEventListener('click' , addcart);
+    function addcart(event) {
     event.preventDefault();
-    // addToCart12.push()
-    // let name = event.this.name;
-    // let ProductImg = event.this.path;
-    // let ProductType = event.this.type;
-    // let ProductPrice = Number(event.this.price);
-
-
-    // let addtocart = new Cart(name, ProductImg, ProductPrice,ProductType);
-    console.table(event);
+ 
+   let id = event.target.id;
+   let name = Product.all[id].name;
+   let path = Product.all[id].path;
+   let price =Product.all[i].price;
+   let type = Product.all[i].type;
+   let item = {name:name, path:path, price:price,type:type};
+    addToCarts.push(item);
+    console.log(addToCarts);
+    
   }
+
 
 
 };
@@ -99,7 +96,6 @@ function Cart(name, path, price, type) {
   this.path = path;
   this.price = price;
   this.type = type;
-  //this.quantity = quantity;
   this.total = this.price * this.quantity;
   Cart.all.push(this);
 }
