@@ -118,3 +118,4 @@ Cart.prototype.render = function () {
   newLine.appendChild(totalPrice);
 
 };
+

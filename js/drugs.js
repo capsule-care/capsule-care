@@ -12,3 +12,24 @@ for (let i = 0; i < name.length; i++) {
 
 
 
+
+// Local storage
+
+function settingItems() {
+  let items = JSON.stringify(Product.all);
+  localStorage.setItem('Products', items);
+}
+
+function gettingItems() {
+  let asString = localStorage.getItem('Products');
+  let asObj = JSON.parse(asString);
+
+  if (asObj !== null) {
+    Product.all = asObj;
+    //render();
+  }
+
+}
+gettingItems();
+
+// We will link the from to the local storage
