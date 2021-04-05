@@ -689,6 +689,17 @@ footer {
   margin-bottom: 1.25rem;
 }
 
+
+.cardPrice{
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+  left: auto 50%;
+  top: auto 50%;
+  
+}
+
 /************/
 
 /*Form___________________________*/

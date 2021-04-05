@@ -49,7 +49,7 @@ Product.prototype.render = function () {
   cardContent.appendChild(cardInfo);
 
   let cardprice = document.createElement('p');
-  cardprice.classList.add('cardInfo');
+  cardprice.classList.add('cardPrice');
   cardprice.textContent = `Price : ${this.price} JD`;
   cardContent.appendChild(cardprice);
 };
