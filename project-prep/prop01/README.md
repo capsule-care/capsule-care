@@ -10,10 +10,9 @@ Team Leader:
 - [Mohammad Abu Mattar](https://github.com/MKAbuMattar)
 
 Team Member:
-- [Mohammad Abu Hatab](https://github.com/mohammadabuhatab)
 - [Enas Batayenh](https://github.com/EnasBatayneh)
+- [Mohammad Abu Hatab](https://github.com/mohammadabuhatab)
 - [Osama magableh](https://github.com/osamamagableh)
-- [Hanan Almomani](https://github.com/HananAlmomani)
 - [Laith AlOudat](https://github.com/LaithAlOudat)
 
 ***

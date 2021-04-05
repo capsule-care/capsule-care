@@ -1,7 +1,49 @@
-/* eslint-disable no-redeclare */
-/* eslint-disable no-unused-vars */
 'use strict';
-let addToCarts = [];
+
+function Cart(products) {
+  this.products = products;
+}
+
+Cart.prototype.addProduct = function (name, path, price, type) {
+  this.products.push(new CartProduct(name, path, price, type));
+};
+
+Cart.prototype.saveToLocalStorage = function () {
+  localStorage.setItem('Cart', JSON.stringify(this.products));
+};
+
+Cart.prototype.removeProduct = function (product) {
+  this.products.splice(product, 1);
+};
+
+const CartProduct = function (name, path, price, type) {
+  this.name = name;
+  this.path = path;
+  this.price = price;
+  this.type = type;
+};
+
+let cart = new Cart([]);
+
+
+function loadCart() {
+  const cartProducts = JSON.parse(localStorage.getItem('Cart')) || [];
+  cart = new Cart(cartProducts);
+}
+
+function updateCounter() {
+  const iconCart = document.getElementById('iconCart');
+
+  iconCart.classList.add('cart-empty');
+
+  const itemCount = document.getElementById('productCount');
+  if (!cart.products.length - 1) {
+    iconCart.classList.remove('cart-empty');
+    iconCart.classList.add('cart-add');
+    itemCount.textContent = `(${cart.products.length})`;
+  }
+}
+
 function Product(name, desc, path, type, price) {
   this.name = name;
   this.path = path;
@@ -53,28 +95,27 @@ Product.prototype.render = function (i) {
   cardInfo.textContent = `${this.desc}`;
   cardContent.appendChild(cardInfo);
 
-  let addToCart =document.createElement('button');
+  let addToCart = document.createElement('button');
   cardbox.appendChild(addToCart);
   addToCart.classList.add('cardButton');
-  addToCart.setAttribute('id',`${i}`);
-  addToCart.textContent='ADD TO CART';
+  addToCart.setAttribute('id', `${i}`);
+  addToCart.textContent = 'ADD TO CART';
 
-    addToCart.addEventListener('click' , addcart);
-    function addcart(event) {
+  addToCart.addEventListener('click', addcart);
+  function addcart(event) {
     event.preventDefault();
- 
-   let id = event.target.id;
-   let name = Product.all[id].name;
-   let path = Product.all[id].path;
-   let price =Product.all[i].price;
-   let type = Product.all[i].type;
-   let item = {name:name, path:path, price:price,type:type};
-    addToCarts.push(item);
-    console.log(addToCarts);
-    
+
+    let id = event.target.id;
+    let name = Product.all[id].name;
+    let path = Product.all[id].path;
+    let price = Product.all[i].price;
+    let type = Product.all[i].type;
+
+    cart.addProduct(name, path, price, type);
+    cart.saveToLocalStorage();
+    updateCounter();
+    console.log(cart);
   }
-
-
 
 };
 
@@ -90,55 +131,4 @@ let type = ['cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'co
 let price = [30, 15, 15, 20, 20, 15, 17, 20, 8, 28.4, 19.9, 15.6, 15.6, 12.1, 21.7, 47.6, 2.5, 14.2, 14.9, 4, 112.25];
 
 
-
-function Cart(name, path, price, type) {
-  this.name = name;
-  this.path = path;
-  this.price = price;
-  this.type = type;
-  this.total = this.price * this.quantity;
-  Cart.all.push(this);
-}
-Cart.all = [];
-
-
-Cart.prototype.render = function () {
-  const cartTable = document.getElementById('cartTable');
-
-  const newLine = document.createElement('tr');
-  cartTable.appendChild(newLine);
-
-  let deletedTd = document.createElement('td');
-  deletedTd.textContent = 'remove';
-  newLine.appendChild(deletedTd);
-
-  const productName = document.createElement('td');
-  productName.textContent = this.name;
-  newLine.appendChild(productName);
-
-  const productImg = document.createElement('td');
-  newLine.appendChild(productImg);
-  const productImgTag = document.createElement('img');
-  productImgTag.src = this.path;
-  productImgTag.width = 50;
-  productImgTag.height = 50;
-  productImg.appendChild(productImgTag);
-
-  const productType = document.createElement('td');
-  productType.textContent = this.type;
-  newLine.appendChild(productType);
-
-  const individualPrice = document.createElement('td');
-  individualPrice.textContent = this.price;
-  newLine.appendChild(individualPrice);
-
-  const quantity = document.createElement('td');
-  quantity.textContent = this.quantity;
-  newLine.appendChild(quantity);
-
-  const totalPrice = document.createElement('td');
-  totalPrice.textContent = this.total;
-  newLine.appendChild(totalPrice);
-
-};
 
