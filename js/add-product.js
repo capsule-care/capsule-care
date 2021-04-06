@@ -26,7 +26,8 @@ function addNewProduct(event) {
 
 
 
-  Product.all.push(addProduct);
+  // Product.all.push(addProduct);
+
 
 
   settingItem();
