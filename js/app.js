@@ -121,6 +121,7 @@ Product.prototype.render = function (i) {
 
 };
 
+
 function gettingItem() {
   let stringObj = localStorage.getItem('Product');
   let normalObj = JSON.parse(stringObj);
@@ -128,6 +129,8 @@ function gettingItem() {
     Product.all = normalObj;
   }
 }
+
+let productlength = Product.all.length;
 
 let name = ['Liftactiv  Collagen', 'Milk Shake Conditioner', 'Anthelios Sunscreen', 'Avene sunblock', 'La Roche-Posay Effaclar Gel', 'Garnier Light Complete', 'Keratin Gloss Serum', 'Normaderm Gel Cleanser', 'Micellar Cleansing Water', 'Vegan Protien', 'Serious Mass', 'Gold Standard Whey Elite', 'Gold Standard pre-workout', 'Micronised Creatine Pwoder', 'C4 Original', 'C4 Double', 'Protien Bar', 'Amino Energy', 'Gold Standard BCAA', 'Panadol', 'Lansoprazole'];
 
