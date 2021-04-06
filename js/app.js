@@ -54,6 +54,7 @@ function Product(name, desc, path, type, price) {
   this.type = type;
   this.price = price;
   Product.all.push(this);
+  settingItem();
 }
 Product.all = [];
 
@@ -63,7 +64,7 @@ function gettingItem() {
   let stringObj = localStorage.getItem('Product');
   let normalObj = JSON.parse(stringObj);
   if (normalObj !== null) {
-    Product.all.push(normalObj);
+    Product.all = normalObj;
 
     productlength = Product.all.length;
   }
@@ -134,6 +135,8 @@ Product.prototype.render = function (i) {
     cart.addProduct(name, path, price, type);
     cart.saveToLocalStorage();
     updateCounter();
+
+    console.log(Product.all);
   }
 };
 
