@@ -721,7 +721,7 @@ footer {
 .cardItem {
   display: flex;
   padding: 1rem;
-
+  width: 25rem;
 }
 
 .cardbox {
@@ -785,8 +785,62 @@ footer {
 }
 
 
-.card-price {
+.tag {
+  display: inline-block;
 
+  width: auto;
+  height: 38px;
+
+  background-color: #979797;
+  -webkit-border-radius: 3px 4px 4px 3px;
+  -moz-border-radius: 3px 4px 4px 3px;
+  border-radius: 3px 4px 4px 3px;
+
+  border-left: 1px solid #979797;
+
+  /* This makes room for the triangle */
+  margin-left: 19px;
+
+  position: relative;
+
+  color: white;
+  font-weight: 300;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 22px;
+  line-height: 38px;
+
+  padding: 0 10px 0 10px;
+}
+
+/* Makes the triangle */
+.tag:before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: -19px;
+  width: 0;
+  height: 0;
+  border-top: 19px solid transparent;
+  border-bottom: 19px solid transparent;
+  border-right: 19px solid #979797;
+}
+
+/* Makes the circle */
+.tag:after {
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  display: block;
+  position: absolute;
+  left: -9px;
+  top: 17px;
+}
+
+
+.card-price {
+  white-space: nowrap;
   /* color: black;
   font-weight: bold;
   font-size: 16px;*/
@@ -809,7 +863,7 @@ footer {
   margin-left: 19px;
 
   position: relative;
-  left: -180px;
+  left: -132px;
 
   color: white;
   font-weight: 300;
@@ -846,18 +900,21 @@ footer {
   top: 17px;
   box-shadow: #000000a6 1px 0px 8px 1px;
 }
-.cardButton{
-  background-color:#F72585 ;
+
+.cardButton {
+  background-color: #013c56;
   color: var(--white-color);
   border: 0;
   padding: 0.9rem;
   font-size: 1rem;
   font-weight: bold;
-cursor: pointer;
+  cursor: pointer;
 }
-.cardButton:focus{
+
+.cardButton:focus {
   outline: none;
 }
+
 /************/
 
 /*Form___________________________*/
