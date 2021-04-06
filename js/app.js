@@ -53,9 +53,26 @@ function Product(name, desc, path, type, price) {
   this.desc = desc;
   this.type = type;
   this.price = price;
-  // Product.all.push(this);
+  Product.all.push(this);
 }
 Product.all = [];
+
+let productlength;
+
+function gettingItem() {
+  let stringObj = localStorage.getItem('Product');
+  let normalObj = JSON.parse(stringObj);
+  if (normalObj !== null) {
+    Product.all.push(normalObj);
+
+    productlength = Product.all.length;
+  }
+}
+
+function settingItem() {
+  let data = JSON.stringify(Product.all);
+  localStorage.setItem('Product', data);
+}
 
 Product.prototype.render = function (i) {
   let cards = document.getElementById('cards');
@@ -111,26 +128,15 @@ Product.prototype.render = function (i) {
     let id = event.target.id;
     let name = Product.all[id].name;
     let path = Product.all[id].path;
-    let price = Product.all[i].price;
-    let type = Product.all[i].type;
+    let price = Product.all[id].price;
+    let type = Product.all[id].type;
 
     cart.addProduct(name, path, price, type);
     cart.saveToLocalStorage();
     updateCounter();
   }
-
 };
 
-let productlength;
-
-function gettingItem() {
-  let stringObj = localStorage.getItem('Product');
-  let normalObj = JSON.parse(stringObj);
-  if (normalObj !== null) {
-    Product.all = normalObj;
-    productlength = Product.all.length;
-  }
-}
 
 let name = ['Liftactiv  Collagen', 'Milk Shake Conditioner', 'Anthelios Sunscreen', 'Avene sunblock', 'La Roche-Posay Effaclar Gel', 'Garnier Light Complete', 'Keratin Gloss Serum', 'Normaderm Gel Cleanser', 'Micellar Cleansing Water', 'Vegan Protien', 'Serious Mass', 'Gold Standard Whey Elite', 'Gold Standard pre-workout', 'Micronised Creatine Pwoder', 'C4 Original', 'C4 Double', 'Protien Bar', 'Amino Energy', 'Gold Standard BCAA', 'Panadol', 'Lansoprazole'];
 
