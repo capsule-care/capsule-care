@@ -225,6 +225,7 @@ img {
   font-size: var(--font-size-text-banner);
   font-family: var(--title-font);
   color: var(--white-color);
+  margin: 145px 0px 0px 0px;
 }
 
 .whiteSpace {
