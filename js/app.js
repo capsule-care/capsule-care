@@ -54,7 +54,7 @@ function Product(name, desc, path, type, price) {
   this.type = type;
   this.price = price;
   Product.all.push(this);
-  settingItem();
+  //settingItem();
 }
 Product.all = [];
 
