@@ -4,7 +4,6 @@ loadCart();
 
 updateCounter();
 
-
 const addProductForm = document.getElementById('addProduct');
 
 addProductForm.addEventListener('submit', addNewProduct);
@@ -21,16 +20,16 @@ function addNewProduct(event) {
 
   let addProduct = new Product(name, ProductDesc, ProductImg, ProductType, ProductPrice);
 
+  console.log(addProduct);
 
   gettingItem();
+
   Product.all.push(addProduct);
+
   settingItem();
 
   addProductForm.reset();
 }
 
-function settingItem() {
-  let data = JSON.stringify(Product.all);
-  localStorage.setItem('Product', data);
-}
+
 
