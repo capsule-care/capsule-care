@@ -16,6 +16,8 @@ function drugsRender() {
 
 gettingItem();
 
+console.log(Product.all);
+
 function drugsRenderLocal() {
   for (let i = 0; i < productlength; i++) {
 
