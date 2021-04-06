@@ -5,17 +5,17 @@ loadCart();
 
 
 
-// function drugsRender() {
+function drugsRender() {
 
-//   for (let i = 0; i < name.length; i++) {
-//     let newProduct = new Product(name[i], info[i], path[i], type[i], price[i]);
+  for (let i = 0; i < name.length; i++) {
+    let newProduct = new Product(name[i], info[i], path[i], type[i], price[i]);
 
-//     if (newProduct.type.toLowerCase() === 'drugs'.toLowerCase()) {
-//       newProduct.render(i);
-//     }
-//   }
+    if (newProduct.type.toLowerCase() === 'drugs'.toLowerCase()) {
+      newProduct.render(i);
+    }
+  }
 
-// }
+}
 
 
 
@@ -32,7 +32,7 @@ function drugsRenderLocal() {
   }
 }
 
-// drugsRender();
+drugsRender();
 
 drugsRenderLocal();
 
