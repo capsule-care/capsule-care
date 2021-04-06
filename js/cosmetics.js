@@ -14,6 +14,8 @@ function cosmeticsRender() {
   }
 }
 
+gettingItem();
+
 function cosmeticsRenderLocal() {
   for (let i = 0; i < productlength; i++) {
 

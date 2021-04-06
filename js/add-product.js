@@ -26,9 +26,6 @@ function addNewProduct(event) {
   Product.all.push(addProduct);
   settingItem();
 
-  console.clear();
-  console.log(Product.all);
-
   addProductForm.reset();
 }
 
