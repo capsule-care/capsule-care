@@ -1,6 +1,8 @@
 'use strict';
 
 loadCart();
+let quantityText;
+let quantitys ;
 
 function render(i) {
   const cartTable = document.getElementById('cartTable');
@@ -43,8 +45,14 @@ function render(i) {
   quantity.textContent = cart.products[i].quantity;
   newLine.appendChild(quantity);
 
+  quantityText = document.createElement('input');
+  quantityText.value=1;
+  quantity.appendChild(quantityText);
+  document.getElementById("calcTotal").addEventListener("click", calcTotal);
+  // quantitys.push(quantityText.value);
+  quantitys= cart.products[i].price *Number(quantityText.value);
   const totalPrice = document.createElement('td');
-  totalPrice.textContent = cart.products[i].price * 1;
+  totalPrice.textContent = cart.products[i].price *1;
   newLine.appendChild(totalPrice);
 }
 
@@ -67,7 +75,7 @@ function totalOfTotal() {
   }
 }
 
-totalOfTotal();
+// totalOfTotal();
 showRender();
 updateCounter();
 
@@ -77,7 +85,7 @@ function removeProductFromCart(event) {
   loadCart();
   removeProduct();
   updateCounter();
-  totalOfTotal();
+ 
   showRender();
 }
 
@@ -93,4 +101,8 @@ function removeProduct() {
 }
 
 
-
+function calcTotal() {
+  totalOfTotal();
+  //  for (let i =0 ;i <quantitys.length;i++){
+ }
+ console.log(  quantityText.value);
