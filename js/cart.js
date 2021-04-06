@@ -9,9 +9,12 @@ function render(i) {
   cartTable.appendChild(newLine);
 
   let deletedTd = document.createElement('td');
-  deletedTd.textContent = 'remove';
-  deletedTd.id = i;
   newLine.appendChild(deletedTd);
+
+  let deletedIcon = document.createElement('span');
+  deletedIcon.setAttribute('class', 'iconRemove remove');
+  deletedIcon.id = i;
+  deletedTd.appendChild(deletedIcon);
 
   const deleteMM = document.getElementById(`${i}`);
   deleteMM.addEventListener('click', removeProductFromCart);
@@ -45,29 +48,49 @@ function render(i) {
   newLine.appendChild(totalPrice);
 }
 
-for (let i = 0; i < cart.products.length; i++) {
-  render(i);
+function showRender() {
+  for (let i = 0; i < cart.products.length; i++) {
+    render(i);
+  }
 }
 
+function totalOfTotal() {
+  const totalId = document.getElementById('total');
+  let total = 0;
+  for (let i = 0; i < cart.products.length; i++) {
+    total += (cart.products[i].price);
+  }
+  if (!cart.products.length - 1) {
+    totalId.textContent = `Total Price: ${total}`;
+  } else {
+    totalId.textContent = ``;
+  }
+}
+
+totalOfTotal();
+showRender();
 updateCounter();
 
 function removeProductFromCart(event) {
   cart.removeProduct(event.target.id);
   cart.saveToLocalStorage();
   loadCart();
+  removeProduct();
   updateCounter();
-  console.log(event.target.id);
-  // removeProduct(event.target.id);
-  render(event.target.id);
+  totalOfTotal();
+  showRender();
 }
 
-function removeProduct(i) {
-  let table = document.getElementById('cart');
+function removeProduct() {
+  let table = document.getElementById('cartTable');
   let tableRows = table.getElementsByTagName('tr');
 
-  table.removeChild(tableRows[i]);
+  let rowCount = tableRows.length;
+
+  for (let i = rowCount - 1; i > 0; i--) {
+    table.removeChild(tableRows[i]);
+  }
 }
 
-console.log(cart.products.length);
 
 
