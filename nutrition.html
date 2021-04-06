@@ -58,26 +58,36 @@
 
     <section id="btnSection">
       
+      <div class="tab-btn">
+        <ul class="group-btn">
+          <li class="tab active" id="nutritionProductTab">
+            <button class="btntab tab-btn" id="nutritionProductBtn">Nutrition Products</button>
+          </li>
+          <li class="tab" id="calcutaionTab">
+            <button class="btntab tab-btn" id="calcutaionBtn">Nutrition Calculation</button>
+          </li>
+        </ul>
+      </div>
+      
+      
     </section>
 
     <div class="whiteSpace"></div>
-    <section class="search-section">
-      <input class="search-input" type="text" placeholder="Search">
-    </section>
-    <div class="whiteSpace"></div>
-<section class="calculators">
+   
+    
+<section class="calculators hide" id="calculators" >
   <dev>
   <form id="bmi" action="" method="POST" class="boxForm">
     <fieldset>
       <legend>Body mass index</legend>
       <label>Weight :</label>
-      <input type="number" min="1" id="weight" name="weight" placeholder="Enter your weight" required>
+      <input type="number" min="1" id="weight" name="weight" placeholder="Enter your weight in kg" required>
       <label>Height :</label>
-      <input type="number" step=".01" min="1" id="height" name="height" placeholder="Enter your height" required>
+      <input type="number" step=".01" min="1" id="height" name="height" placeholder="Enter your height in meter"  required>
       <input type="submit" value="BMI Result" class="btn btn-submit">
     </fieldset>
   </form>
-  <dev id="bmiResult" class="bmiResult"></dev>
+  <dev id="bmiResult" class="bmiResult" >  BMI Result:  </dev>
  </dev>
  
  <dev>
@@ -85,16 +95,25 @@
   <fieldset>
     <legend>Ideal Weight</legend>
     <label>Height :</label>
-    <input type="number" step=".01" min="1" id="height2" name="height" placeholder="Enter your height" required>
+    <input type="number" step=".01" min="1" id="height2" name="height" placeholder="Enter your height in meter" required>
     <input type="submit" value="IW Result" class="btn btn-submit">
   </fieldset>
 </form>
-<dev id="iwResult" class="iwResult"></dev>
+<dev id="iwResult" class="iwResult">  Ideal Weight Result:  </dev>
 </dev>
 </section>
+
+
+<div id="product">
+   <section class="search-section">
+     <input class="search-input" type="text" placeholder="Search">
+    </section>
+
     <section class="page">
       <div id="cards" class="cards"></div>
     </section>
+  </div>
+
 
     <div class="whiteSpace"></div>
   </main>
