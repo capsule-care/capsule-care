@@ -32,6 +32,16 @@ function addNewProduct(event) {
 
   settingItem();
 
+  const alert = document.getElementById('alert');
+  if (alert.classList === 'hide') {
+    alert.classList.remove('hide');
+
+  }
+
+  setTimeout(function () {
+    alert.classList.add('hide');
+  }, 3000);
+
   addProductForm.reset();
 }
 
