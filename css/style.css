@@ -794,16 +794,16 @@ footer {
   left: auto 50%;
   top: auto 50%;  */
   display: inline-block;
-  box-shadow: #000000a6 1px 0px 8px 1px;
+  box-shadow: #000000a6 1px 0px 4px 0px;
   width: 11rem;
   height: 38px;
 
-  background-color: #6ab070;
+  background-color: var(--main-color);
   -webkit-border-radius: 3px 4px 4px 3px;
   -moz-border-radius: 3px 4px 4px 3px;
   border-radius: 3px 4px 4px 3px;
 
-  border-left: 1px solid #6ab070;
+  border-left: 1px solid var(--main-color);
 
   /* This makes room for the triangle */
   margin-left: 19px;
@@ -813,7 +813,7 @@ footer {
 
   color: white;
   font-weight: 300;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 38px;
 
   padding: 0 10px 0 10px;
@@ -829,7 +829,7 @@ footer {
   height: 0;
   border-top: 19px solid transparent;
   border-bottom: 19px solid transparent;
-  border-right: 19px solid #6ab070;
+  border-right: 19px solid var(--main-color);
 
 }
 
@@ -846,7 +846,18 @@ footer {
   top: 17px;
   box-shadow: #000000a6 1px 0px 8px 1px;
 }
-
+.cardButton{
+  background-color:#F72585 ;
+  color: var(--white-color);
+  border: 0;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: bold;
+cursor: pointer;
+}
+.cardButton:focus{
+  outline: none;
+}
 /************/
 
 /*Form___________________________*/
