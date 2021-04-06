@@ -63,7 +63,7 @@ function gettingItem() {
   let stringObj = localStorage.getItem('Product');
   let normalObj = JSON.parse(stringObj);
   if (normalObj !== null) {
-    Product.all.push(normalObj);
+    Product.all = normalObj;
 
     productlength = Product.all.length;
   }
