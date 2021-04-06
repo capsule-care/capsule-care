@@ -1132,3 +1132,32 @@ table tr:hover {
   justify-content: center;
   padding-top: 3rem;
 }
+
+
+/* Calculators __________________________ */
+
+.calculators {
+  display: grid;
+  /* grid-template-columns: 38% 38%; */
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.iwResult,
+.bmiResult {
+  display: grid;
+
+  width: 100%;
+  height: 4rem;
+  background-color: #013c56;
+  color: var(--white-color);
+  padding: 1rem;
+  margin: 1.5rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  margin-top: 0.8rem;
+}
