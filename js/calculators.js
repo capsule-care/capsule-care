@@ -9,6 +9,9 @@ let bmiResult = document.getElementById('bmiResult');
 let formIW = document.getElementById('iw');
 let iwResult = document.getElementById('iwResult');
 
+
+let br = '<br>';
+
 formBMI.addEventListener('submit', bmiCalculators);
 function bmiCalculators(event) {
 	event.preventDefault();
@@ -16,24 +19,17 @@ function bmiCalculators(event) {
 	let height = Number(event.target.height.value);
 	let computBmi = weight / (height * height);
 	if (computBmi <= 18.5) {
-		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
-		Under Weight.`;
+		bmiResult.innerHTML = `BMI Result : ${computBmi.toFixed(2)} kg/m2 ${br} Under Weight.`;
 	} if (computBmi > 18.5 && computBmi < 25) {
-		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
-		Normal.`;
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 ${br} Normal.`;
 	} if (computBmi >= 25.1 && computBmi < 30) {
-		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
-		Over Weight.`;
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 ${br} Over Weight.`;
 	} if (computBmi >= 30 && computBmi < 35) {
-		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
-		Obese.`;
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 ${br} Obese.`;
 	} if (computBmi >= 35 && computBmi < 50) {
-		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
-		Extremly Obese.`;
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 ${br} Extremly Obese.`;
 	} if (computBmi >= 50) {
-		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
-		OOOHH GOD.`;
-		// formBMI.removeEventListener('submit', bmiCalculators);
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 ${br} OOOHH GOD.`;
 	}
 
 }

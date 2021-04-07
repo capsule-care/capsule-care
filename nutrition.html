@@ -57,7 +57,7 @@
   <main>
 
     <section id="btnSection">
-      
+
       <div class="tab-btn">
         <ul class="group-btn">
           <li class="tab active" id="nutritionProductTab">
@@ -68,51 +68,54 @@
           </li>
         </ul>
       </div>
-      
-      
+
+
     </section>
 
     <div class="whiteSpace"></div>
-   
-    
-<section class="calculators hide" id="calculators" >
-  <dev>
-  <form id="bmi" action="" method="POST" class="boxForm">
-    <fieldset>
-      <legend><b class="firstLetters">B</b>ody <b class="firstLetters">M</b>ass <b class="firstLetters">I</b>ndex</legend>
-      <label>Weight :</label>
-      <input type="number" min="1" id="weight" name="weight" placeholder="Enter your weight in kg" required>
-      <label>Height :</label>
-      <input type="number" step=".01" min="1" id="height" name="height" placeholder="Enter your height in meter"  required>
-      <input type="submit" value="BMI Result" class="btn btn-submit">
-    </fieldset>
-  </form>
-  <dev id="bmiResult" class="bmiResult" >  BMI Result:  </dev>
- </dev>
- 
- <dev>
- <form id="iw" action="" method="POST" class="boxForm">
-  <fieldset>
-    <legend><b class="firstLetters">I</b>deal <b class="firstLetters">W</b>eight</legend>
-    <label>Height :</label>
-    <input type="number" step=".01" min="1" id="height2" name="height" placeholder="Enter your height in meter" required>
-    <input type="submit" value="IW Result" class="btn btn-submit">
-  </fieldset>
-</form>
-<dev id="iwResult" class="iwResult">  Ideal Weight Result:  </dev>
-</dev>
-</section>
 
 
-<div id="product">
-   <section class="search-section">
-     <input class="search-input" type="text" placeholder="Search">
+    <section class="calculators hide" id="calculators">
+      <dev>
+        <form id="bmi" action="" method="POST" class="boxForm">
+          <fieldset>
+            <legend><b class="firstLetters">B</b>ody <b class="firstLetters">M</b>ass <b class="firstLetters">I</b>ndex
+            </legend>
+            <label>Weight :</label>
+            <input type="number" min="1" id="weight" name="weight" placeholder="Enter your weight in kg" required>
+            <label>Height :</label>
+            <input type="number" step=".01" min="1" id="height" name="height" placeholder="Enter your height in meter"
+              required>
+            <input type="submit" value="BMI Result" class="btn btn-submit">
+          </fieldset>
+        </form>
+        <p id="bmiResult" class="bmiResult"> BMI Result: </p>
+      </dev>
+
+      <dev>
+        <form id="iw" action="" method="POST" class="boxForm">
+          <fieldset>
+            <legend><b class="firstLetters">I</b>deal <b class="firstLetters">W</b>eight</legend>
+            <label>Height :</label>
+            <input type="number" step=".01" min="1" id="height2" name="height" placeholder="Enter your height in meter"
+              required>
+            <input type="submit" value="IW Result" class="btn btn-submit">
+          </fieldset>
+        </form>
+        <p id="iwResult" class="iwResult"> Ideal Weight Result: </p>
+      </dev>
     </section>
 
-    <section class="page">
-      <div id="cards" class="cards"></div>
-    </section>
-  </div>
+
+    <div id="product">
+      <section class="search-section">
+        <input class="search-input" type="text" placeholder="Search">
+      </section>
+
+      <section class="page">
+        <div id="cards" class="cards"></div>
+      </section>
+    </div>
 
 
     <div class="whiteSpace"></div>

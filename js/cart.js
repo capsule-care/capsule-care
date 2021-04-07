@@ -2,7 +2,9 @@
 
 loadCart();
 let quantityText;
-let quantitys ;
+let quantitys;
+
+const calcTotalId = document.getElementById("calcTotal");
 
 function render(i) {
   const cartTable = document.getElementById('cartTable');
@@ -43,22 +45,28 @@ function render(i) {
 
   const quantity = document.createElement('td');
   quantity.textContent = cart.products[i].quantity;
+  quantity.id = i;
   newLine.appendChild(quantity);
 
   quantityText = document.createElement('input');
-  quantityText.value=1;
+  quantityText.value = 1;
   quantity.appendChild(quantityText);
-  document.getElementById("calcTotal").addEventListener("click", calcTotal);
+  calcTotalId.addEventListener("click", calcTotal);
   // quantitys.push(quantityText.value);
-  quantitys= cart.products[i].price *Number(quantityText.value);
+  quantitys = cart.products[i].price * Number(quantityText.value);
   const totalPrice = document.createElement('td');
-  totalPrice.textContent = cart.products[i].price *1;
+  totalPrice.textContent = cart.products[i].price * 1;
   newLine.appendChild(totalPrice);
 }
 
 function showRender() {
   for (let i = 0; i < cart.products.length; i++) {
     render(i);
+  }
+  if (!cart.products.length - 1) {
+    calcTotalId.classList.remove('hide');
+  } else {
+    calcTotalId.classList.add('hide');
   }
 }
 
@@ -85,7 +93,7 @@ function removeProductFromCart(event) {
   loadCart();
   removeProduct();
   updateCounter();
- 
+
   showRender();
 }
 
@@ -103,6 +111,11 @@ function removeProduct() {
 
 function calcTotal() {
   totalOfTotal();
-  //  for (let i =0 ;i <quantitys.length;i++){
- }
- console.log(  quantityText.value);
+
+
+}
+
+function qq() {
+
+}
+
