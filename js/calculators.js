@@ -27,9 +27,12 @@ function bmiCalculators(event) {
 	} if (computBmi >= 30 && computBmi < 35) {
 		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
 		Obese.`;
-	} if (computBmi >= 35) {
+	} if (computBmi >= 35 && computBmi < 50) {
 		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
 		Extremly Obese.`;
+	} if (computBmi >= 50) {
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
+		OOOHH GOD.`;
 		// formBMI.removeEventListener('submit', bmiCalculators);
 	}
 
