@@ -188,6 +188,6 @@ order.addEventListener('submit', (event) => {
   recipt.textContent = `Total Price ${price}`;
   setTimeout(function () {
     alertsubmition.classList.add('hide');
-  }, 3000);
+  }, 10000);
 });
 
