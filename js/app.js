@@ -88,7 +88,7 @@ Product.prototype.render = function (i) {
 
   let cardprice = document.createElement('p');
   cardprice.classList.add('card-price');
-  cardprice.textContent = `Price : ${this.price} JD`;
+  cardprice.textContent = `${this.price} JD`;
   cardItem.appendChild(cardprice);
 
   let cardImgdiv = document.createElement('div');
@@ -156,7 +156,7 @@ let path = ['./img/cosmetics-img/1.jpg', './img/cosmetics-img/2.jpg', './img/cos
 
 let type = ['cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'drugs', 'drugs', 'drugs', 'drugs', 'drugs', 'drugs', 'drugs', 'drugs', 'drugs', 'drugs'];
 
-let price = [30, 15, 15, 20, 20, 15, 17, 20, 8, 28.4, 19.9, 15.6, 15.6, 12.1, 21.7, 47.6, 2.5, 14.2, 14.9, 4, 11.25, 12.5, 10, 13.25, 43.54, 18, 32.65, 14.75, 4.23];
+let price = [30, 15, 15, 20, 20, 15, 17, 20, 8, 28, 19, 15, 15, 12, 21, 47, 2, 14, 14, 4, 11, 12, 10, 13, 43, 18, 32, 14, 4];
 
 
 

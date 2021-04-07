@@ -12,7 +12,7 @@
 :root {
   /*colors*/
   --bg-color: #f1f1f1;
-  --main-color: #3F37C9;
+  --main-color: #171188;
   --secondary-color: ;
   --thirdly-color: ;
   --white-color: #E0E0E0;
@@ -230,7 +230,7 @@ img {
 
 .whiteSpace {
   width: 100%;
-  height: 7rem;
+  height: 5.45rem;
 }
 
 .titleArea {
@@ -864,7 +864,7 @@ footer {
   margin-left: 19px;
 
   position: relative;
-  left: -132px;
+  left: -83px;
 
   color: white;
   font-weight: 300;
@@ -1138,10 +1138,15 @@ table tr:hover {
 
 .calculators {
   display: grid;
-  /* grid-template-columns: 38% 38%; */
+  grid-template-columns: auto auto;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+}
+
+.formMargin {
+  margin: 2rem;
+  height: 22rem;
 }
 
 .firstLetters {
@@ -1165,6 +1170,11 @@ table tr:hover {
   margin: 0 auto;
   margin-bottom: 2rem;
   margin-top: 0.8rem;
+}
+
+.bmiResult {
+  width: 96%;
+  margin-left: 0;
 }
 
 
@@ -1197,7 +1207,7 @@ table tr:hover {
 .tab {
   display: block;
   padding: 15px;
-  background: rgba(160, 179, 176, 0.25);
+  background: rgb(107 116 114);
   color: var(--bg-color);
   font-size: 20px;
   float: left;
@@ -1226,4 +1236,19 @@ table tr:hover {
   background: rgba(160, 179, 176, 0.25);
   color: var(--black-color);
   cursor: auto;
+}
+
+.imgCalculators,
+.imgCalculator {
+  display: grid;
+  grid-template-columns: 0%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.imgCalculator {
+  grid-template-columns: auto;
+  box-shadow: 0 20px 40px -14px rgb(0 0 0 / 25%);
 }
