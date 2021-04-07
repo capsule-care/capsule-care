@@ -56,7 +56,7 @@
 
   <main>
     <div class="whiteSpace"></div>
-    <section class="cartSection">
+    <section class="cartSection" id="cartSection">
       <table id="cartTable">
         <tr>
           <th>Remove</th>
@@ -73,7 +73,42 @@
     <section class="sectionTotal">
       <p id="total"></p>
     </section>
+
+     <section class="submittion hide" id="submittion">
+      <form action="" method="POST" class="boxForm" id="order">
+        <fieldset>
+          <legend>Your Order</legend>
+          <label>First name:</label>
+          <input type="text" id="fname" name="fname" placeholder="Enter your First name"  required>
+          <label>Last Name</label>
+          <input type="text" id="lname" name="lname" placeholder="Enter your Last name" required>
+          <label>Location</label>
+          <input type="text" id="loc" name="loc" placeholder="Enter your Location" required>
+          <label>Phone Number</label>
+          <input type="number" id="phnum" name="phnum" placeholder="Enter your Phone Number" required >
+          <label>Total Price</label>
+          <input type="text" id="price" name="price" disabled readonly>
+          <input type="submit" value="Confirm" class="btn btn-submit">
+        </fieldset>
+      </form>
+    </section>
+    
+    <section >
+
+    <dev id="alert" class="hide">  
+      <div class="alertsubmition">
+      <p id="urname"> </p> 
+      <p id="urloc"> </p> 
+      <p id="deliverytime"> </p> 
+      <p id="urphone"> </p> 
+      <p id="recipt"> </p> 
+    </div>
+    </dev>
+  </section>
+
     <div class="whiteSpace"></div>
+
+
   </main>
 
   <footer>
@@ -102,6 +137,7 @@
 
   <script src="./js/app.js"></script>
   <script src="./js/cart.js"></script>
+  <script src="./js/order.js"></script>
 </body>
 
 </html>

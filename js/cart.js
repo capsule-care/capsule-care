@@ -2,8 +2,8 @@
 
 loadCart();
 let quantityText;
-let prices=0;
-let total=0;
+let prices = 0;
+let total = 0;
 
 
 const calcTotalId = document.getElementById("calcTotal");
@@ -52,24 +52,24 @@ function render(i) {
 
   quantityText = document.createElement('input');
   quantityText.value = 0;
-  quantityText.id=i;
+  quantityText.id = i;
 
- 
+
   quantity.appendChild(quantityText);
   calcTotalId.addEventListener('click', calcTotal);
-  
-const totalPrice = document.createElement('td');
+
+  const totalPrice = document.createElement('td');
   totalPrice.textContent = cart.products[i].price * Number(quantityText.value);
-  
-  quantityText.addEventListener('keyup',(event)=>{
+
+  quantityText.addEventListener('keyup', (event) => {
     event.preventDefault();
-  let totalValue=event.target.value;
-  prices=cart.products[i].price * Number(totalValue);
-  total+=prices;
-    totalPrice.textContent = prices; 
+    let totalValue = event.target.value;
+    prices = cart.products[i].price * Number(totalValue);
+    total += prices;
+    totalPrice.textContent = prices;
   });
 
-  newLine.appendChild(totalPrice); 
+  newLine.appendChild(totalPrice);
 }
 
 function showRender() {
@@ -84,12 +84,13 @@ function showRender() {
 }
 
 function totalOfTotal() {
-  const totalId = document.getElementById('total'); 
+  const priceId = document.getElementById('price');
   if (!cart.products.length - 1) {
-    totalId.textContent = `Total Price: ${total}`;
+    priceId.value = `${total}`;
   } else {
-    totalId.textContent = ``;
+    priceId.value = ``;
   }
+
 }
 showRender();
 updateCounter();
@@ -118,6 +119,75 @@ function removeProduct() {
 
 function calcTotal() {
   totalOfTotal();
+  tuggle();
+
 }
 
+
+
+
+const cartSection = document.getElementById('cartSection');
+
+const submittion = document.getElementById('submittion');
+
+
+function tuggle() {
+  if (submittion.classList.contains('hide')) {
+
+    cartSection.classList.add('hide');
+    submittion.classList.remove('hide');
+
+  }
+  else {
+    cartSection.classList.remove('hide');
+    submittion.classList.add('hide');
+  }
+}
+const order = document.getElementById('order');
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
+order.addEventListener('submit', (event) => {
+  event.preventDefault();
+  let fname = event.target.fname.value;
+  let lname = event.target.lname.value;
+  let loc = event.target.loc.value;
+  let phnum = event.target.phnum.value;
+  let price = event.target.price.value;
+  tuggle();
+  order.reset();
+  localStorage.setItem('Cart', '[]');
+  calcTotalId.classList.add('hide');
+  const iconCart = document.getElementById('iconCart');
+  const itemCount = document.getElementById('productCount');
+  iconCart.classList.add('cart-empty');
+  iconCart.classList.remove('cart-add');
+  itemCount.textContent = ``;
+  removeProduct();
+
+  const alertsubmition = document.getElementById('alert');
+
+  const urname = document.getElementById('urname');
+
+  const urloc = document.getElementById('urloc');
+
+  const deliverytime = document.getElementById('deliverytime');
+
+  const urphone = document.getElementById('urphone');
+
+  const recipt = document.getElementById('recipt');
+
+  alertsubmition.classList.remove('hide');
+  urname.textContent = `Name: ${fname} ${lname}`;
+  urloc.textContent = `Location: ${loc}`;
+  deliverytime.textContent = `Expected time of Delivery ${getRndInteger(1, 7)} days`;
+  urphone.textContent = `Phone number ${phnum}`;
+  recipt.textContent = `Total Price ${price}`;
+  setTimeout(function () {
+    alertsubmition.classList.add('hide');
+  }, 3000);
+});
 
