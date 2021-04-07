@@ -861,7 +861,7 @@ footer {
   border-left: 1px solid var(--main-color);
 
   /* This makes room for the triangle */
-  margin-left: 19px;
+  margin-left: 0;
 
   position: relative;
   left: -83px;
@@ -871,7 +871,7 @@ footer {
   font-size: 18px;
   line-height: 38px;
 
-  padding: 0 10px 0 10px;
+  padding: 0px 20px 0px 20px;
 }
 
 /* Makes the triangle */
