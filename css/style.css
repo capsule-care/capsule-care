@@ -1149,7 +1149,8 @@ table tr:hover {
 }
 
 .iwResult,
-.bmiResult {
+.bmiResult,
+.alert {
   display: grid;
 
   width: 100%;
@@ -1217,4 +1218,12 @@ table tr:hover {
 
 }
 
-.alert {}
+.alert {
+  background-color: #219fd4;
+}
+
+.disabled {
+  background: rgba(160, 179, 176, 0.25);
+  color: var(--black-color);
+  cursor: auto;
+}

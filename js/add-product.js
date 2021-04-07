@@ -6,6 +6,8 @@ updateCounter();
 
 const addProductForm = document.getElementById('addProduct');
 
+const alertAddProduct = document.getElementById('alert');
+
 addProductForm.addEventListener('submit', addNewProduct);
 
 
@@ -26,20 +28,20 @@ function addNewProduct(event) {
 
 
 
-  // Product.all.push(addProduct);
+  Product.all.push(addProduct);
 
 
 
   settingItem();
 
-  const alert = document.getElementById('alert');
-  if (alert.classList === 'hide') {
-    alert.classList.remove('hide');
 
+
+  if (alertAddProduct.classList.contains('hide')) {
+    alertAddProduct.classList.remove('hide');
   }
 
   setTimeout(function () {
-    alert.classList.add('hide');
+    alertAddProduct.classList.add('hide');
   }, 3000);
 
   addProductForm.reset();
