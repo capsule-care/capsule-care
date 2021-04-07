@@ -56,6 +56,8 @@
 
   <main>
 
+    <div class="whiteSpace"></div>
+
     <section id="btnSection">
 
       <div class="tab-btn">
@@ -76,7 +78,8 @@
 
 
     <section class="calculators hide" id="calculators">
-      <dev>
+
+      <dev class="formMargin">
         <form id="bmi" action="" method="POST" class="boxForm">
           <fieldset>
             <legend><b class="firstLetters">B</b>ody <b class="firstLetters">M</b>ass <b class="firstLetters">I</b>ndex
@@ -92,18 +95,24 @@
         <p id="bmiResult" class="bmiResult"> BMI Result: </p>
       </dev>
 
-      <dev>
+      <dev class="formMargin">
         <form id="iw" action="" method="POST" class="boxForm">
           <fieldset>
             <legend><b class="firstLetters">I</b>deal <b class="firstLetters">W</b>eight</legend>
             <label>Height :</label>
             <input type="number" step=".01" min="1" id="height2" name="height" placeholder="Enter your height in meter"
               required>
+            <div class="whiteSpace"></div>
             <input type="submit" value="IW Result" class="btn btn-submit">
           </fieldset>
         </form>
         <p id="iwResult" class="iwResult"> Ideal Weight Result: </p>
       </dev>
+
+      <div class="imgCalculators">
+        <img class="imgCalculator" src="./img/nutrition-img/second-obesity.png" alt="">
+      </div>
+
     </section>
 
 
