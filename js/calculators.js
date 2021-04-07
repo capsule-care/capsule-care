@@ -15,10 +15,25 @@ function bmiCalculators(event) {
 	let weight = Number(event.target.weight.value);
 	let height = Number(event.target.height.value);
 	let computBmi = weight / (height * height);
-	bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2`;
-	// formBMI.removeEventListener('submit', bmiCalculators);
-}
+	if (computBmi <= 18.5) {
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
+		Under Weight.`;
+	} if (computBmi > 18.5 && computBmi < 25) {
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
+		Normal.`;
+	} if (computBmi >= 25.1 && computBmi < 30) {
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
+		Over Weight.`;
+	} if (computBmi >= 30 && computBmi < 35) {
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
+		Obese.`;
+	} if (computBmi >= 35) {
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 \n\
+		Extremly Obese.`;
+		// formBMI.removeEventListener('submit', bmiCalculators);
+	}
 
+}
 
 
 formIW.addEventListener('submit', iwCalculators);

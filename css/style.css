@@ -1144,6 +1144,10 @@ table tr:hover {
   margin: 0 auto;
 }
 
+.firstLetters {
+  color: #219fd4;
+}
+
 .iwResult,
 .bmiResult {
   display: grid;
@@ -1165,15 +1169,16 @@ table tr:hover {
 
 .tab-btn {
   position: relative;
-padding: 1rem;
-color: var(--bg-color);
-    font-size: var(--font-size-sx);
-    padding: 0.3rem;
+  padding: 1rem;
+  color: var(--bg-color);
+  font-size: var(--font-size-sx);
+  padding: 0.3rem;
 }
+
 .group-btn {
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .btntab {
@@ -1183,26 +1188,27 @@ color: var(--bg-color);
   cursor: pointer;
 
 }
-.btntab:focus  {
+
+.btntab:focus {
   outline: none;
 }
 
 .tab {
   display: block;
-    padding: 15px;
-    background: rgba(160, 179, 176, 0.25);
-    color: var(--bg-color);
-    font-size: 20px;
-    float: left;
-    width: 50%;
-    text-align: center;
-    cursor: pointer;
-    transition: .5s ease;
-    width: 20rem;
-    
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: var(--bg-color);
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  transition: .5s ease;
+  width: 20rem;
+
 }
 
-.active{
+.active {
   background-color: #FF9A8B;
 }
 
@@ -1211,7 +1217,4 @@ color: var(--bg-color);
 
 }
 
-.alert {
-  
-
-}
+.alert {}
