@@ -9,9 +9,6 @@ let bmiResult = document.getElementById('bmiResult');
 let formIW = document.getElementById('iw');
 let iwResult = document.getElementById('iwResult');
 
-
-let br = '<br>';
-
 formBMI.addEventListener('submit', bmiCalculators);
 function bmiCalculators(event) {
 	event.preventDefault();
@@ -19,17 +16,18 @@ function bmiCalculators(event) {
 	let height = Number(event.target.height.value);
 	let computBmi = weight / (height * height);
 	if (computBmi <= 18.5) {
-		bmiResult.innerHTML = `BMI Result : ${computBmi.toFixed(2)} kg/m2 ${br} Under Weight.`;
+		bmiResult.textContent = ``;
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2, Under Weight.`;
 	} if (computBmi > 18.5 && computBmi < 25) {
-		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 ${br} Normal.`;
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2, Normal.`;
 	} if (computBmi >= 25.1 && computBmi < 30) {
-		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 ${br} Over Weight.`;
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2, Over Weight.`;
 	} if (computBmi >= 30 && computBmi < 35) {
-		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 ${br} Obese.`;
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2, Obese.`;
 	} if (computBmi >= 35 && computBmi < 50) {
-		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 ${br} Extremly Obese.`;
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2, Extremly Obese.`;
 	} if (computBmi >= 50) {
-		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2 ${br} OOOHH GOD.`;
+		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2, OOOHH GOD.`;
 	}
 
 }
@@ -41,7 +39,6 @@ function iwCalculators(event) {
 	let height = Number(event.target.height.value);
 	let computiw = (height * height) * 21.7;
 	iwResult.textContent = `Ideal wight Result : ${computiw.toFixed(2)} kg`;
-	// formIW.removeEventListener('submit', iwCalculators);
 }
 
 const nutritionProductBtn = document.getElementById('nutritionProductBtn');

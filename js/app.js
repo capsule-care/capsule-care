@@ -54,7 +54,6 @@ function Product(name, desc, path, type, price) {
   this.type = type;
   this.price = price;
   Product.all.push(this);
-  //settingItem();
 }
 Product.all = [];
 
@@ -136,7 +135,6 @@ Product.prototype.render = function (i) {
     cart.saveToLocalStorage();
     updateCounter();
 
-    console.log(Product.all);
     addToCart.textContent = 'This Item In Your Cart';
     addToCart.setAttribute('class', 'cardButton disabled');
     addToCart.removeEventListener('click', addcart);
