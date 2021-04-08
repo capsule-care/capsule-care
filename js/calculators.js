@@ -1,6 +1,3 @@
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable no-unused-vars */
-/* eslint-disable indent */
 'use strict';
 
 let formBMI = document.getElementById('bmi');
@@ -16,7 +13,6 @@ function bmiCalculators(event) {
 	let height = Number(event.target.height.value);
 	let computBmi = weight / (height * height);
 	if (computBmi <= 18.5) {
-		bmiResult.textContent = ``;
 		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2, Under Weight.`;
 	} if (computBmi > 18.5 && computBmi < 25) {
 		bmiResult.textContent = `BMI Result : ${computBmi.toFixed(2)} kg/m2, Normal.`;

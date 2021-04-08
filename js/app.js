@@ -25,7 +25,6 @@ function CartProduct(name, path, price, type) {
 
 let cart = new Cart([]);
 
-
 function loadCart() {
   const cartProducts = JSON.parse(localStorage.getItem('Cart')) || [];
   cart = new Cart(cartProducts);
@@ -155,6 +154,3 @@ let path = ['./img/cosmetics-img/1.jpg', './img/cosmetics-img/2.jpg', './img/cos
 let type = ['cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'cosmetics', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'nutrition', 'drugs', 'drugs', 'drugs', 'drugs', 'drugs', 'drugs', 'drugs', 'drugs', 'drugs', 'drugs'];
 
 let price = [30, 15, 15, 20, 20, 15, 17, 20, 8, 28, 19, 15, 15, 12, 21, 47, 2, 14, 14, 4, 11, 12, 10, 13, 43, 18, 32, 14, 4];
-
-
-

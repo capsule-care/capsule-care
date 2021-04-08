@@ -10,7 +10,6 @@ const alertAddProduct = document.getElementById('alert');
 
 addProductForm.addEventListener('submit', addNewProduct);
 
-
 function addNewProduct(event) {
   event.preventDefault();
   let name = event.target.name.value;
@@ -19,20 +18,13 @@ function addNewProduct(event) {
   let ProductType = event.target.ProductType.value.toLowerCase();
   let ProductPrice = Number(event.target.ProductPrice.value);
 
-
   let addProduct = new Product(name, ProductDesc, ProductImg, ProductType, ProductPrice);
 
   gettingItem();
 
-
-
   Product.all.push(addProduct);
 
-
-
   settingItem();
-
-
 
   if (alertAddProduct.classList.contains('hide')) {
     alertAddProduct.classList.remove('hide');
