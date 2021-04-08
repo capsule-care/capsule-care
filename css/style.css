@@ -1104,6 +1104,7 @@ fieldset>select>option {
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 100%;
 }
 
 table,
@@ -1115,6 +1116,7 @@ th {
 table {
   border-collapse: collapse;
   border-bottom: #333333 solid 1px;
+
 }
 
 table th {
@@ -1257,17 +1259,18 @@ table tr:hover {
   display: grid;
   justify-content: center;
   align-items: center;
-  
+
 }
+
 .hide {
-display: none;
+  display: none;
 }
 
 .alertsubmition {
   width: 50%;
   display: grid;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   background-color: var(--main-color);
   color: var(--white-color);
   margin: 0 auto;

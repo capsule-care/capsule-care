@@ -4,10 +4,7 @@
 
 ## Team Member
 
-Team Leader:
 - [Mohammad Abu Mattar](https://github.com/MKAbuMattar)
-
-Team Member:
 - [Enas Batayenh](https://github.com/EnasBatayneh)
 - [Mohammad Abu Hatab](https://github.com/mohammadabuhatab)
 - [Osama magableh](https://github.com/osamamagableh)

@@ -22,8 +22,6 @@ function addNewProduct(event) {
 
   let addProduct = new Product(name, ProductDesc, ProductImg, ProductType, ProductPrice);
 
-  console.log(addProduct);
-
   gettingItem();
 
 
@@ -46,10 +44,3 @@ function addNewProduct(event) {
 
   addProductForm.reset();
 }
-
-
-//mk
-//om
-//lo
-//mh
-//eb

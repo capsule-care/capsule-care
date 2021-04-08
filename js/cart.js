@@ -6,7 +6,8 @@ let prices = 0;
 let total = 0;
 
 
-const calcTotalId = document.getElementById("calcTotal");
+const calcTotalId = document.getElementById('calcTotal');
+const theaderId = document.getElementById('theader');
 
 function render(i) {
   const cartTable = document.getElementById('cartTable');
@@ -78,8 +79,10 @@ function showRender() {
   }
   if (!cart.products.length - 1) {
     calcTotalId.classList.remove('hide');
+    theaderId.classList.remove('hide');
   } else {
     calcTotalId.classList.add('hide');
+    theaderId.classList.add('hide');
   }
 }
 
@@ -161,6 +164,7 @@ order.addEventListener('submit', (event) => {
   order.reset();
   localStorage.setItem('Cart', '[]');
   calcTotalId.classList.add('hide');
+  theaderId.classList.add('hide');
   const iconCart = document.getElementById('iconCart');
   const itemCount = document.getElementById('productCount');
   iconCart.classList.add('cart-empty');
