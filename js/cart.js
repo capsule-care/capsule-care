@@ -5,7 +5,6 @@ let quantityText;
 let prices = 0;
 let total = 0;
 
-
 const calcTotalId = document.getElementById('calcTotal');
 const theaderId = document.getElementById('theader');
 
@@ -126,13 +125,9 @@ function calcTotal() {
 
 }
 
-
-
-
 const cartSection = document.getElementById('cartSection');
 
 const submittion = document.getElementById('submittion');
-
 
 function tuggle() {
   if (submittion.classList.contains('hide')) {
@@ -151,7 +146,6 @@ const order = document.getElementById('order');
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
-
 
 order.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -194,4 +188,3 @@ order.addEventListener('submit', (event) => {
     alertsubmition.classList.add('hide');
   }, 10000);
 });
-
